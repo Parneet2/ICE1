@@ -28,25 +28,38 @@ public class CardTrick {
             magicHand[i] = c;
             //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
         }
+
+        Card luckyCard = new Card();
+        luckyCard.setValue(2);  
+        luckyCard.setSuit("Clubs");  
+        magicHand[magicHand.length - 1] = luckyCard;
+        
         System.out.println("Magic Hand:");
         for (Card card : magicHand) {
             System.out.println("Card: " + card.getValue() + " of " + card.getSuit());
         }
         //insert code to ask the user for Card value and suit, create their card
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter card value: ");
-        int userValue = scanner.nextInt();
-        System.out.print("Enter card suit (Hearts, Diamonds, Clubs, Spades): ");
-        String userSuit = scanner.next();
+       // Scanner scanner = new Scanner(System.in);
+       // System.out.print("Enter card value: ");
+       // int userValue = scanner.nextInt();
+       // System.out.print("Enter card suit (Hearts, Diamonds, Clubs, Spades): ");
+        //String userSuit = scanner.next();
         
         Card userCard = new Card();
         userCard.setValue(userValue);
         userCard.setSuit(userSuit);
         // and search magicHand here
         
-         boolean found = false;
+        // boolean found = false;
+        //for (Card card : magicHand) {
+         //   if (card.getValue() == userCard.getValue() && card.getSuit().equalsIgnoreCase(userCard.getSuit())) {
+           //     found = true;
+             //   break;
+            //}
+        //}
+          boolean found = false;
         for (Card card : magicHand) {
-            if (card.getValue() == userCard.getValue() && card.getSuit().equalsIgnoreCase(userCard.getSuit())) {
+            if (card.equals(luckyCard)) {
                 found = true;
                 break;
             }
@@ -68,4 +81,5 @@ public class CardTrick {
     }
 }
         // add one luckcard hard code 2,clubs
+
     
