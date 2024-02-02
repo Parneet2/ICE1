@@ -33,6 +33,8 @@ public class CardTrick {
         luckyCard.setValue(2);  
         luckyCard.setSuit("Clubs");  
         magicHand[magicHand.length - 1] = luckyCard;
+        int userValue = 2;  
+        String userSuit = "Clubs";  
         
         System.out.println("Magic Hand:");
         for (Card card : magicHand) {
